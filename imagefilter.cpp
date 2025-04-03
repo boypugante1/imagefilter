@@ -99,18 +99,18 @@ int main()
                 const auto char_ptr = reinterpret_cast<uint8_t*>(buffer);
                 constexpr size_t bpp = 3;
                 const auto stride = metadata.width * bpp + metadata.padding;
-                for(uint32_t y = (metadata.height / 2 - 100); y < (metadata.height / 2 + 100); ++y)
+                for(uint32_t y = metadata.height / 2 - 100; y < metadata.height / 2 + 100; ++y)
                 {
-                    for(uint32_t x = (metadata.width / 2 - 2); x < (metadata.width / 2 + 2); ++x)
+                    for(uint32_t x = metadata.width / 2 - 2; x < metadata.width / 2 + 2; ++x)
                     {
                         char_ptr[y * stride + x * bpp + 0] = 0;
                         char_ptr[y * stride + x * bpp + 1] = 0;
                         char_ptr[y * stride + x * bpp + 2] = 255;
                     }
                 }
-                for(uint32_t x = (metadata.width / 2 - 100); x < (metadata.width / 2 + 100); ++x)
+                for(uint32_t x = metadata.width / 2 - 100; x < metadata.width / 2 + 100; ++x)
                 {
-                    for(uint32_t y = (metadata.height / 2 - 2); y < (metadata.height / 2 + 2); ++y)
+                    for(uint32_t y = metadata.height / 2 - 2; y < metadata.height / 2 + 2; ++y)
                     {
                         char_ptr[y * stride + x * bpp + 0] = 0;
                         char_ptr[y * stride + x * bpp + 1] = 0;

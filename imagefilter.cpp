@@ -134,7 +134,7 @@ int main()
     exporter_t export_callback = [&](const void* const data, const size_t size, const iff_image_metadata* const metadata)
     {
         size_t buffer_size;
-        auto buffer = iff_get_import_buffer(chains["import"], "importer", &buffer_size);
+        const auto buffer = iff_get_import_buffer(chains["import"], "importer", &buffer_size);
         if(buffer != nullptr)
         {
             if(buffer_size >= size)
